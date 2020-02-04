@@ -39,6 +39,9 @@
             <%= render "like_text", { likes: post.likes } %>
           </div>
           <div>
+          <% if post.link.present? %>
+            <p><a href="<%= post.link %>">詳細ページへ</a></p>
+          <% end %>
             <span><strong><%= post.user.name %></strong></span>
             <span><%= post.caption %></span>
             <%= link_to time_ago_in_words(post.created_at).upcase + "前", post_path(post), class: "post-time no-text-decoration" %>

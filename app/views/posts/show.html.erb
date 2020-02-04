@@ -23,6 +23,9 @@
               <% end %>
             <% end %>
           </div>
+          <% if @post.link.present? %>
+          <p><a href="<%= @post.link %>">詳細ページへ</a></p>
+          <% end %>
           <div class="m-2">
             <strong>
               <%= @post.caption %>
